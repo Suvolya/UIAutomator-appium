@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.netology.appium.OpenTextNewActivityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-20T12:25:53" hostname="DESKTOP-PRTC9V6" time="17.273">
+  <properties/>
+  <testcase name="sampleTest()" classname="ru.netology.appium.OpenTextNewActivityTest" time="17.273"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

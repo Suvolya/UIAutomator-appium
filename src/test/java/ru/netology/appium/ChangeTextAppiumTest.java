@@ -1,12 +1,12 @@
 package ru.netology.appium;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import junit.framework.TestCase;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class ChangeTextAppiumTest {
@@ -33,24 +33,24 @@ public class ChangeTextAppiumTest {
 
         @Test
         public void sampleTest() {
-            MobileElement el1 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/userInput");
+            WebElement el1 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/userInput"));
             el1.isDisplayed();
             el1.click();
             el1.sendKeys("111");
-            MobileElement el2 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/buttonChange");
+            WebElement el2 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/buttonChange"));
             el2.isDisplayed();
             el2.click();
-            MobileElement el3 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/userInput");
+            WebElement el3 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/userInput"));
             el3.isDisplayed();
             el3.click();
             el3.sendKeys("   ");
-            MobileElement el4 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/buttonChange");
+            WebElement el4 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/buttonChange"));
             el4.isDisplayed();
             el4.click();
-            MobileElement el5 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/textToBeChanged");
+            WebElement el5 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/textToBeChanged"));
             el5.isDisplayed();
 
-            Assertions.assertEquals(el5, "111");
+            Assertions.assertEquals(el5.getText(), "111");
         }
 
         @AfterEach
@@ -59,4 +59,4 @@ public class ChangeTextAppiumTest {
         }
     }
 
-}
+

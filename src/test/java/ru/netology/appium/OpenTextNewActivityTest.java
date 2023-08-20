@@ -1,6 +1,5 @@
 package ru.netology.appium;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -9,6 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
@@ -35,17 +36,18 @@ public class OpenTextNewActivityTest {
         }
 
         @Test
-        public void sampleTest() {
-            MobileElement el1 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/userInput");
+        public void sampleTest() throws InterruptedException {
+            WebElement el1 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/userInput"));
             el1.isDisplayed();
             el1.click();
             el1.sendKeys("222");
-            MobileElement el2 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/buttonActivity");
+            WebElement el2 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/buttonActivity"));
             el2.isDisplayed();
             el2.click();
-            MobileElement el3 = (MobileElement) driver.findElementById("ru.netology.testing.uiautomator:id/text");
+            Thread.sleep(500);
+            WebElement el3 = (WebElement) driver.findElement(By.id("ru.netology.testing.uiautomator:id/text"));
 
-            Assertions.assertEquals(el3, "222");
+            Assertions.assertEquals(el3.getText(), "222");
 
         }
 
